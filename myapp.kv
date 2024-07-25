@@ -1,0 +1,50 @@
+<LoginScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 10
+        TextInput:
+            id: username_input
+            hint_text: 'Usuário'
+        TextInput:
+            id: password_input
+            hint_text: 'Senha'
+            password: True
+        Button:
+            text: 'Entrar'
+            on_press: root.do_login()
+        Label:
+            id: message_label
+            color: 1, 0, 0, 1
+
+<MainScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 10
+        Button:
+            text: 'Ordens de Serviço'
+            on_press: root.go_to_orders()
+        Button:
+            text: 'Cadastrar Ordem de Serviço'
+            on_press: root.go_to_register()
+
+<OrdersScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 10
+        ScrollView:
+            GridLayout:
+                id: orders_list
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+
+<RegisterScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 10
+        Label:
+            text: 'Tela de Cadastro de Ordem de Serviço'
